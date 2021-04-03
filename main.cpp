@@ -14,9 +14,11 @@ int main(int argc, const char * argv[]) {
     
     cout << string(3,'x') << string(2,' ') << string(5,'x') << endl;
     
-    Box basicBox(3,4);
-
-    Checkered checkeredBox(5,5);
+    FilledBox filledBox(3,4);
+    
+    HollowBox hollowBox(10,5);
+    
+    CheckeredBox checkeredBox(4,4);
 
     return 0;
 }

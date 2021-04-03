@@ -14,17 +14,20 @@ Box::Box(int width, int height):_width(width),_height(height){}
 void Box::drawBox(){cout << "this ended up not being used, so you shouldn't see this." << endl;}
 
 // these can be combined
-string constructFull(const int length){return string(length,88);}
-string constructEmpty(const int length){return string(length,32);}
+string Box::constructFull(const int length){return string(length,88);}
+string Box::constructEmpty(const int length){return string(length,32);}
 
-void Full::drawBox(){
+int Box::getWidth(){return _width;}
+int Box::getHeight(){return _height;}
+
+void FilledBox::drawBox(){
     for(int i=0; i<_height;++i){
         cout << constructFull(_width) << endl;
     }
 }
 
 
-void Hollow::drawBox(){
+void HollowBox::drawBox(){
     cout << constructFull(_width) << endl;
     for(int i=0; i<_height-2;++i){
         cout << "x" << constructEmpty(_width-2) << "x" << endl;
@@ -34,7 +37,7 @@ void Hollow::drawBox(){
 
 
 
-string Checkered::drawLine(const int length, const int row){
+string CheckeredBox::drawLine(const int length, const int row){
     string line = "";
     auto holder = length;
     
@@ -46,7 +49,7 @@ string Checkered::drawLine(const int length, const int row){
     return line;
 }
 
-void Checkered::drawBox(){
+void CheckeredBox::drawBox(){
     for(int i=0;i<_height;++i){
         cout << drawLine(_width, i) << endl;
     }

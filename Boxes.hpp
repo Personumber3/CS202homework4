@@ -20,35 +20,21 @@ public:
 
     string constructFull(const int length);
     string constructEmpty(const int length);
+    int getWidth();
+    int getHeight();
 
     const int _width;
     const int _height;
 };
 
-class Full : public Box {using Box::Box; void drawBox();};
+class FilledBox : public Box {using Box::Box; void drawBox();};
 
-class Hollow : public Box {using Box::Box; void drawBox();};
+class HollowBox : public Box {using Box::Box; void drawBox();};
 
-class Checkered : public Box {
+class CheckeredBox : public Box {
     using Box::Box;
     void drawBox();
     string drawLine(const int length,const int row);
-};
-
-
-
-
-
-class Base {
-public:
-  virtual void fooVirtual() const { cout << "Base class virtual function\n"; }
-  void fooNotVirtual() const { cout << "Base class non-virtual function\n"; }
-};
-
-class Derived : public Base {
-public:
-  void fooVirtual() const override { cout << "Derived class virtual function\n"; }
-  void fooNotVirtual() const { cout << "Derived class non-virtual function\n"; }
 };
 
 
