@@ -8,11 +8,13 @@
 #include "Boxes.hpp"
 
 Box::Box(int width, int height):_width(width),_height(height){}
-Box::Box():_width(1),_height(1){}
+FilledBox::FilledBox():Box(1, 1){}
+HollowBox::HollowBox():Box(1, 1){}
+CheckeredBox::CheckeredBox():Box(1, 1){}
 
 // these can be combined
-string Box::constructFullBox(const int length){return string(length,'x');}
-string Box::constructEmptyBox(const int length){return string(length,32);}
+string Box::constructFull(const int length){return string(length,'x');}
+string Box::constructEmpty(const int length){return string(length,32);}
 
 int Box::getWidth(){return _width;}
 int Box::getHeight(){return _height;}
@@ -20,7 +22,7 @@ int Box::getHeight(){return _height;}
 void Box::setWidth(int const &width){_width=width;}
 void Box::setHeight(int const &height){_height=height;}
 
-string CheckeredBox::drawBoxLine(const int length, const int row){
+string CheckeredBox::drawLine(const int length, const int row){
     string line = "";
     auto holder = length;
     
@@ -30,4 +32,9 @@ string CheckeredBox::drawBoxLine(const int length, const int row){
         line += "x ";
     }
     return line;
+}
+
+ostream &operator<<(ostream &os,const Box &b){
+    b.print(os);
+    return os;
 }
