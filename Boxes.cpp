@@ -15,7 +15,7 @@ void Box::drawBox(){cout << "this ended up not being used, so you shouldn't see 
 
 // these can be combined
 string constructFull(const int length){return string(length,88);}
-string drawEmpty(const int length){return string(length,32);}
+string constructEmpty(const int length){return string(length,32);}
 
 void Full::drawBox(){
     for(int i=0; i<_height;++i){
