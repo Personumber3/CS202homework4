@@ -24,5 +24,7 @@ int main(int argc, const char * argv[]) {
     cout << endl;
     checkeredBox.drawBox();
     
+    filledBox.setHeight(5);
+    
     return 0;
 }
