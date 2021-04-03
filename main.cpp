@@ -7,7 +7,7 @@
 
 #include <iostream>
 #include <string>
-#include "Boxes.cpp"
+#include "Boxes.hpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {
