@@ -9,9 +9,18 @@
 #include <string>
 using std::string;
 
-void Box::drawLine(){
 
+void Box::drawBox(){}
+
+string constructFull(const int length){
+    string line("x",8);
+    for(int i=0; i < length; i++){
+        line += "x";
+    }
+    return line;
 }
+void drawEmpty(const int length);
+
 void Full::drawLine(){
     string line = "";
     for(int i=0; i < _width; i++){
@@ -19,6 +28,8 @@ void Full::drawLine(){
     }
     cout << line << endl;
 }
+
+
 void Hollow::drawLine(){
     string line = "";
     for(int i=0; i < _width; i++){
@@ -27,6 +38,15 @@ void Hollow::drawLine(){
     }
     cout << line << endl;
 }
+void Hollow::drawEdge(){
+    string line = "";
+    for(int i=0; i < _width; i++){
+        line += "x";
+    }
+    cout << line << endl;
+}
+
+
 void Checkered::drawLine(){
     string line = "";
     for(int i=0; i < _width/2; i++){

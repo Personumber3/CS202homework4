@@ -14,9 +14,11 @@ using namespace std;
 
 class Box {
 public:
-    void draw();
+    void drawBox();
 //private:
-    void drawLine();
+    string constructFull(const int length);
+    string constructEmpty(const int length);
+
     int _width;
     int _height;
 };
@@ -26,10 +28,15 @@ class Full : public Box {
 };
 
 class Hollow : public Box {
+    void draw();
     void drawLine();
+    
+    void drawEdge();
+    void drawMiddle();
 };
 
 class Checkered : public Box {
+    void draw();
     void drawLine();
 };
 

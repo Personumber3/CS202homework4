@@ -6,10 +6,12 @@
 //
 
 #include <iostream>
+#include <string>
+using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    int a = 5;
-    std::cout << a/2 << std::endl;
+    std::string line(8,'a');
+    std::cout << line << std::endl;
     return 0;
 }
