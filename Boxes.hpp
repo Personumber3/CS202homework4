@@ -9,6 +9,7 @@
 #define Boxes_hpp
 
 #include <stdio.h>
+#include <iostream>
 #include <string>
 using namespace std;
 
@@ -16,7 +17,8 @@ class Box {
 public:
     Box(const int width,const int height);
     
-    virtual string type() const {return "normal Box";};
+    virtual void print(ostream &os) {};
+    virtual string type() const;
 
     string constructFull(const int length);
     string constructEmpty(const int length);
@@ -26,7 +28,6 @@ public:
     void setWidth(int const &width);
     void setHeight(int const &height);
 
-    virtual void print(ostream &os) const {};
 
     int _width;
     int _height;
@@ -36,12 +37,13 @@ class FilledBox : public Box {
     using Box::Box;
 public:
     FilledBox();
-
-    void print(ostream &os) const override {
+/*
+    void print(ostream &os) override {
         for(int i=0; i<_height;++i){
             os << constructFull(_width) << "\n";
         }
     }
+ */
     string type() const override {return "Filled Box";};
 ;
 };
@@ -50,8 +52,8 @@ class HollowBox : public Box {
     using Box::Box;
 public:
     HollowBox();
-
-    void print(ostream &os) const override {
+/*
+    void print(ostream &os) override {
         os << constructFull(_width) << "\n";
         for(int i=0; i<_height-2;++i){
             os << "x" << constructEmpty(_width-2) << "x" << "\n";
@@ -59,6 +61,7 @@ public:
         os << constructFull(_width) << "\n";
     };
     string type() const override {return "Hollow Box";};
+ */
 };
 
 class CheckeredBox : public Box {
@@ -68,12 +71,13 @@ public:
     
     string drawLine(const int length,const int row);
     string type() const override {return "Checkered Box";};
-    
-    void print(ostream &os) const override {
+    /*
+    void print(ostream &os) override {
         for(int i=0;i<_height;i++){
             os << drawLine(_width, i) << "\n";
         }
     };
+     */
 };
 
 ostream operator<<(const ostream &os,const Box &b);

@@ -33,8 +33,9 @@ string CheckeredBox::drawLine(const int length, const int row){
     }
     return line;
 }
-
+/*
 ostream &operator<<(ostream &os,const Box &b){
-    b.print(os);
+    //b.print(os);
     return os;
 }
+*/
