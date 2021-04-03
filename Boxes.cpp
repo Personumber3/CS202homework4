@@ -9,6 +9,7 @@
 #include <string>
 using std::string;
 
+Box::Box(int width, int height):_width(width),_height(height){}
 
 void Box::drawBox(){}
 

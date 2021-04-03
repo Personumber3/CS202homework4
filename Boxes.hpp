@@ -14,6 +14,7 @@ using namespace std;
 
 class Box {
 public:
+    Box(int width,int height);
     void drawBox();
 //private:
     string constructFull(const int length);

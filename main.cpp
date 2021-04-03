@@ -7,11 +7,14 @@
 
 #include <iostream>
 #include <string>
+#include "Boxes.cpp"
 using namespace std;
 
 int main(int argc, const char * argv[]) {
     // insert code here...
-    std::string line(8,'a');
-    std::cout << line << std::endl;
+    Box basicBox(3,4);
+
+
+
     return 0;
 }
