@@ -11,10 +11,12 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
+    
+    cout << string(3,'x') << string(2,' ') << string(5,'x') << endl;
+    
     Box basicBox(3,4);
 
-
+    Checkered checkeredBox(5,5);
 
     return 0;
 }

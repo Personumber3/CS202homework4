@@ -11,11 +11,11 @@ using std::string;
 
 Box::Box(int width, int height):_width(width),_height(height){}
 
-void Box::drawBox(){}
+void Box::drawBox(){cout << "this ended up not being used, so you shouldn't see this." << endl;}
 
-string constructFull(const int length){return string(length,'x');}
-
-string drawEmpty(const int length){return string(length,' ');}
+// these can be combined
+string constructFull(const int length){return string(length,88);}
+string drawEmpty(const int length){return string(length,32);}
 
 void Full::drawBox(){
     for(int i=0; i<_height;++i){

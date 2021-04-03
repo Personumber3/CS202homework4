@@ -14,21 +14,23 @@ using namespace std;
 
 class Box {
 public:
-    Box(int width,int height);
+    Box(const int width,const int height);
+    
     void drawBox();
-//private:
+
     string constructFull(const int length);
     string constructEmpty(const int length);
 
-    int _width;
-    int _height;
+    const int _width;
+    const int _height;
 };
 
-class Full : public Box {void drawBox();};
+class Full : public Box {using Box::Box; void drawBox();};
 
-class Hollow : public Box {void drawBox();};
+class Hollow : public Box {using Box::Box; void drawBox();};
 
 class Checkered : public Box {
+    using Box::Box;
     void drawBox();
     string drawLine(const int length,const int row);
 };
