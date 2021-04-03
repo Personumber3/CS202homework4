@@ -10,31 +10,54 @@
 
 #include <stdio.h>
 #include <iostream>
+#include <string>
 using namespace std;
 
 class Box {
 public:
     Box(const int width,const int height);
     
-    void drawBox();
+    virtual void drawBox() {cout << "this ended up not being used, so you shouldn't see this." << endl;};
 
-    string constructFull(const int length);
-    string constructEmpty(const int length);
-    int getWidth();
-    int getHeight();
+    string constructFullBox(const int length);
+    string constructEmptyBox(const int length);
+    int getBoxWidth();
+    int getBoxHeight();
 
     const int _width;
     const int _height;
 };
 
-class FilledBox : public Box {using Box::Box; void drawBox();};
+class FilledBox : public Box {
+    using Box::Box;
+    void drawBox() override {
+        for(int i=0; i<_height;++i){
+            cout << constructFullBox(_width) << endl;
+        }
+    }
+;
+};
 
-class HollowBox : public Box {using Box::Box; void drawBox();};
+class HollowBox : public Box {
+    using Box::Box;
+    void drawBox() override {
+        cout << constructFullBox(_width) << endl;
+        for(int i=0; i<_height-2;++i){
+            cout << "x" << constructEmptyBox(_width-2) << "x" << endl;
+        }
+        cout << constructFullBox(_width) << endl;
+    }
+;
+};
 
 class CheckeredBox : public Box {
     using Box::Box;
-    void drawBox();
-    string drawLine(const int length,const int row);
+    void drawBox() override {
+        for(int i=0;i<_height;++i){
+            cout << drawBoxLine(_width, i) << endl;
+        }
+    };
+    string drawBoxLine(const int length,const int row);
 };
 
 
