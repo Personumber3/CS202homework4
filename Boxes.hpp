@@ -23,21 +23,13 @@ public:
     int _height;
 };
 
-class Full : public Box {
-    void drawLine();
-};
+class Full : public Box {void drawBox();};
 
-class Hollow : public Box {
-    void draw();
-    void drawLine();
-    
-    void drawEdge();
-    void drawMiddle();
-};
+class Hollow : public Box {void drawBox();};
 
 class Checkered : public Box {
-    void draw();
-    void drawLine();
+    void drawBox();
+    string drawLine(const int length,const int row);
 };
 
 
