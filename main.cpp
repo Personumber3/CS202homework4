@@ -11,14 +11,18 @@
 using namespace std;
 
 int main(int argc, const char * argv[]) {
-    
-    cout << string(3,'x') << string(2,' ') << string(5,'x') << endl;
-    
+        
     FilledBox filledBox(3,4);
     
     HollowBox hollowBox(10,5);
     
     CheckeredBox checkeredBox(4,4);
 
+    filledBox.drawBox();
+    cout << endl;
+    hollowBox.drawBox();
+    cout << endl;
+    checkeredBox.drawBox();
+    
     return 0;
 }

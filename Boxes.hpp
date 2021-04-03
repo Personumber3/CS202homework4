@@ -30,6 +30,7 @@ public:
 
 class FilledBox : public Box {
     using Box::Box;
+public:
     void drawBox() override {
         for(int i=0; i<_height;++i){
             cout << constructFullBox(_width) << endl;
@@ -40,6 +41,7 @@ class FilledBox : public Box {
 
 class HollowBox : public Box {
     using Box::Box;
+public:
     void drawBox() override {
         cout << constructFullBox(_width) << endl;
         for(int i=0; i<_height-2;++i){
@@ -52,8 +54,9 @@ class HollowBox : public Box {
 
 class CheckeredBox : public Box {
     using Box::Box;
+public:
     void drawBox() override {
-        for(int i=0;i<_height;++i){
+        for(int i=0;i<_height;i++){
             cout << drawBoxLine(_width, i) << endl;
         }
     };
