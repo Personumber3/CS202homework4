@@ -18,11 +18,9 @@ int main(int argc, const char * argv[]) {
     
     CheckeredBox checkeredBox(4,4);
 
-    filledBox.drawBox();
-    cout << endl;
-    hollowBox.drawBox();
-    cout << endl;
-    checkeredBox.drawBox();
+    cout << filledBox << endl;
+    cout << hollowBox << endl;
+    cout << checkeredBox;
     
     filledBox.setHeight(5);
     

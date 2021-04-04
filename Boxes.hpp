@@ -17,8 +17,8 @@ class Box {
 public:
     Box(const int width,const int height);
     
-    virtual void print(ostream &os) {};
-    virtual string type() const;
+    virtual void print(ostream &os) {cout << "cats" << endl;};
+    virtual string type() const {return "Basic Box";};
 
     string constructFull(const int length);
     string constructEmpty(const int length);
@@ -37,13 +37,13 @@ class FilledBox : public Box {
     using Box::Box;
 public:
     FilledBox();
-/*
+
     void print(ostream &os) override {
         for(int i=0; i<_height;++i){
             os << constructFull(_width) << "\n";
         }
     }
- */
+ 
     string type() const override {return "Filled Box";};
 ;
 };
@@ -52,7 +52,7 @@ class HollowBox : public Box {
     using Box::Box;
 public:
     HollowBox();
-/*
+
     void print(ostream &os) override {
         os << constructFull(_width) << "\n";
         for(int i=0; i<_height-2;++i){
@@ -61,7 +61,7 @@ public:
         os << constructFull(_width) << "\n";
     };
     string type() const override {return "Hollow Box";};
- */
+ 
 };
 
 class CheckeredBox : public Box {
@@ -71,15 +71,15 @@ public:
     
     string drawLine(const int length,const int row);
     string type() const override {return "Checkered Box";};
-    /*
+
     void print(ostream &os) override {
         for(int i=0;i<_height;i++){
             os << drawLine(_width, i) << "\n";
         }
     };
-     */
+
 };
 
-ostream operator<<(const ostream &os,const Box &b);
+ostream &operator<<(ostream &os,Box &b);
 
 #endif /* Boxes_hpp */

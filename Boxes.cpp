@@ -12,7 +12,6 @@ FilledBox::FilledBox():Box(1, 1){}
 HollowBox::HollowBox():Box(1, 1){}
 CheckeredBox::CheckeredBox():Box(1, 1){}
 
-// these can be combined
 string Box::constructFull(const int length){return string(length,'x');}
 string Box::constructEmpty(const int length){return string(length,32);}
 
@@ -33,9 +32,8 @@ string CheckeredBox::drawLine(const int length, const int row){
     }
     return line;
 }
-/*
-ostream &operator<<(ostream &os,const Box &b){
-    //b.print(os);
+
+ostream &operator<<(ostream &os,Box &b){
+    b.print(os);
     return os;
 }
-*/
