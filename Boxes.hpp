@@ -16,7 +16,7 @@ using namespace std;
 class Box {
 public:
     Box(const int width,const int height);
-    virtual ~Box(){cout << "basic destructor" << endl;}
+    virtual ~Box(){/*cout << "basic destructor" << endl;*/}
     
     virtual const void print(ostream &os) const {cout << "cats" << endl;};
     virtual string type() const {return "Basic Box";};
@@ -38,7 +38,7 @@ class FilledBox : public Box {
     using Box::Box;
 public:
     FilledBox();
-    ~FilledBox(){cout << "Filled destructor" << endl;}
+    ~FilledBox(){/*cout << "Filled destructor" << endl;*/}
 
     const void print(ostream &os) const override {
         for(int i=0; i<_height;++i){
@@ -54,7 +54,7 @@ class HollowBox : public Box {
     using Box::Box;
 public:
     HollowBox();
-    ~HollowBox(){cout << "Hollow destructor" << endl;}
+    ~HollowBox(){/*cout << "Hollow destructor" << endl;*/}
 
     const void print(ostream &os) const override {
         os << constructFull(_width) << "\n";
@@ -73,7 +73,7 @@ class CheckeredBox : public Box {
     using Box::Box;
 public:
     CheckeredBox();
-    ~CheckeredBox(){cout << "checkered destructor" << endl;}
+    ~CheckeredBox(){/*cout << "checkered destructor" << endl;*/}
     
     string drawLine(const int length,const int row) const;
     string type() const override {return "Checkered Box";};
