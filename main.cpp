@@ -18,11 +18,12 @@ int main(int argc, const char * argv[]) {
     
     CheckeredBox checkeredBox(4,4);
 
-    cout << filledBox << endl;
-    cout << hollowBox << endl;
-    cout << checkeredBox;
+    cout << filledBox.type() << endl << filledBox << endl;
+    cout << hollowBox.type() << endl << hollowBox << endl;
+    cout << checkeredBox.type() << endl << checkeredBox;
     
     filledBox.setHeight(5);
+    cout << checkeredBox.type();
     
     return 0;
 }
