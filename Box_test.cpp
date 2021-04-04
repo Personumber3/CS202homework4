@@ -451,16 +451,16 @@ void test_class_Box_default_ctor(Tester & t)
 
     // Check Filled constructed type
     s1 = con1.type();
-    t.test(s1 == "Filled", "FilledBox, type");
+    t.test(s1 == "Filled Box", "FilledBox, type");
 
     const HollowBox con2;
     const CheckeredBox con3;
 
     s1 = con2.type();
-    t.test(s1 == "Hollow", "HollowBox, type");
+    t.test(s1 == "Hollow Box", "HollowBox, type");
 
     s1 = con3.type();
-    t.test(s1 == "Checkered", "CheckeredBox, type");
+    t.test(s1 == "Checkered Box", "CheckeredBox, type");
 }
 
 
@@ -488,7 +488,7 @@ void test_class_Box_data_ctor(Tester & t)
 
     // Check constructed from data #1 type
     s1 = con1.type();
-    t.test(s1 == "Hollow", "Hollow Ctor from data, type");
+    t.test(s1 == "Hollow Box", "Hollow Ctor from data, type");
 
     // Check constructed from data #1 width
     i1 = con1.getWidth();
@@ -504,7 +504,7 @@ void test_class_Box_data_ctor(Tester & t)
 
     // Check constructed from data #1 type
     s1 = ccon1.type();
-    t.test(s1 == "Hollow", "Hollow Copy Ctor, type");
+    t.test(s1 == "Hollow Box", "Hollow Copy Ctor, type");
 
     // Check constructed from data #1 width
     i1 = ccon1.getWidth();
@@ -519,7 +519,7 @@ void test_class_Box_data_ctor(Tester & t)
 
     // Check constructed from data #2 type
     s1 = con2.type();
-    t.test(s1 == "Filled", "Filled Ctor from data, const, type");
+    t.test(s1 == "Filled Box", "Filled Ctor from data, const, type");
 
     // Check constructed from data #2 height
     i1 = con2.getHeight();
@@ -534,7 +534,7 @@ void test_class_Box_data_ctor(Tester & t)
 
     // Check constructed from data #2 type
     s1 = con3.type();
-    t.test(s1 == "Checkered", "Checkered Ctor from data, const, type");
+    t.test(s1 == "Checkered Box", "Checkered Ctor from data, const, type");
 }
 
 

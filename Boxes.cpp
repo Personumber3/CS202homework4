@@ -23,13 +23,20 @@ void Box::setHeight(int const &height){_height=height;}
 
 string CheckeredBox::drawLine(const int length, const int row) const {
     string line = "";
-    auto holder = length;
-    
-    if(row%2 == 1){line += " "; holder--;}
-    
-    for(int i=0; i < (length+1)/2; i++){
-        line += "x ";
+    if(row%2 == 1){
+        for(int i=0; i < length; i++){
+            if(i%2 == 0){line += " ";}
+            else{line += "x";}
+        }
     }
+    else{
+        for(int i=0; i < length; i++){
+            if(i%2 == 0){line += "x";}
+            else{line += " ";}
+        }
+    }
+    
+    
     return line;
 }
 

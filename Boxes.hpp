@@ -55,10 +55,12 @@ public:
 
     const void print(ostream &os) const override {
         os << constructFull(_width) << "\n";
-        for(int i=0; i<_height-2;++i){
-            os << "x" << constructEmpty(_width-2) << "x" << "\n";
+        if(_height > 1){
+            for(int i=0; i<_height-2;++i){
+                os << "x" << constructEmpty(_width-2) << "x" << "\n";
+            }
+            os << constructFull(_width) << "\n";
         }
-        os << constructFull(_width) << "\n";
     };
     string type() const override {return "Hollow Box";};
  
