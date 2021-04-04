@@ -23,8 +23,8 @@ public:
     string constructFull(const int length) const;
     string constructEmpty(const int length) const;
     
-    const int getWidth();
-    const int getHeight();
+    const int getWidth() const;
+    const int getHeight() const;
     void setWidth(int const &width);
     void setHeight(int const &height);
 

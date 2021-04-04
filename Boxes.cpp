@@ -15,8 +15,8 @@ CheckeredBox::CheckeredBox():Box(1, 1){}
 string Box::constructFull(const int length) const {return string(length,'x');}
 string Box::constructEmpty(const int length) const {return string(length,32);}
 
-const int Box::getWidth(){return _width;}
-const int Box::getHeight(){return _height;}
+const int Box::getWidth() const {return _width;}
+const int Box::getHeight() const {return _height;}
 
 void Box::setWidth(int const &width){_width=width;}
 void Box::setHeight(int const &height){_height=height;}

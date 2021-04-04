@@ -3,7 +3,7 @@
 //
 // Modified 10/2017
 // For Boxes3 Homework in CS 202
-/*
+
 // Includes for code to be tested
 #include "Boxes.hpp"   // For class Box
 #include "Boxes.hpp"   // Double inclusion test
@@ -751,4 +751,4 @@ int main()
 
     return 0;
 }
-*/
+
