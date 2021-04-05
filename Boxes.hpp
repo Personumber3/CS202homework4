@@ -18,8 +18,8 @@ public:
     Box(const int width,const int height);
     virtual ~Box(){/*cout << "basic destructor" << endl;*/}
     
-    virtual const void print(ostream &os) const {cout << "cats" << endl;};
-    virtual string type() const {return "Basic Box";};
+    virtual const void print(ostream &os) const = 0;
+    virtual string type() const = 0;
 
     string constructFull(const int length) const;
     string constructEmpty(const int length) const;

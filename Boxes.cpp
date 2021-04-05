@@ -56,6 +56,6 @@ unique_ptr<Box> boxFactory(char c, int w, int h){
     else if(c=='h'){return std::make_unique<HollowBox>(w,h);}
     else if(c=='c'){return std::make_unique<CheckeredBox>(w,h);}
     cout << "you inputted an invalid character, try 'f','h', or 'c'." << endl;
-    return std::make_unique<Box>(1,1);
+    return 0;
     
 }
